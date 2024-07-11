@@ -1,8 +1,8 @@
 # Build native apps faster and more reliably by sharing code across Android, iOS and desktop.
 
-* * * By Saeed Taheri, Kevin D. Moore & Carlos Mota.
 <p align="center">
   I successfully completed the <a href="https://www.kodeco.com/books/kotlin-multiplatform-by-tutorials/v1.0" align="center">Kotlin Multiplatform by Tutorials</a> book
+  By Saeed Taheri, Kevin D. Moore & Carlos Mota.
 </p>
 
 # Covered concepts
