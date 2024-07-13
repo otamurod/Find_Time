@@ -18,7 +18,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import uz.otamurod.kmp.compose.theme.primaryColor
 import uz.otamurod.kmp.compose.theme.primaryDarkColor
@@ -81,10 +80,4 @@ fun LocalTimeCard(city: String, time: String, date: String) {
             }
         }
     }
-}
-
-@Preview(name = "LocalTimeCard")
-@Composable
-private fun PreviewLocalTimeCard() {
-    LocalTimeCard("Zaamin", "8:30 am", "Tuesday June 18")
 }

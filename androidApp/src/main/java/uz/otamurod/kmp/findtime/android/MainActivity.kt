@@ -24,13 +24,13 @@ class MainActivity : ComponentActivity() {
         Napier.base(DebugAntilog())
 
         setContent {
-            uz.otamurod.kmp.compose.theme.AppTheme {
+            AppTheme {
                 Surface(
                     modifier = Modifier
                         .fillMaxSize()
                         .background(color = MaterialTheme.colors.background)
                 ) {
-                    uz.otamurod.kmp.compose.ui.MainView {
+                    MainView {
                         TopAppBar(title = {
                             when (it) {
                                 0 -> Text(text = stringResource(id = R.string.world_clocks))
@@ -47,13 +47,13 @@ class MainActivity : ComponentActivity() {
 @Preview
 @Composable
 fun DefaultPreview() {
-    uz.otamurod.kmp.compose.theme.AppTheme {
+    AppTheme {
         Surface(
             modifier = Modifier
                 .fillMaxSize()
                 .background(color = MaterialTheme.colors.background)
         ) {
-            uz.otamurod.kmp.compose.ui.MainView {
+            MainView {
                 TopAppBar(title = {
                     when (it) {
                         0 -> Text(text = stringResource(id = R.string.world_clocks))

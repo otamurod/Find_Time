@@ -1,7 +1,11 @@
 package uz.otamurod.kmp.compose.ui
 
-import android.annotation.SuppressLint
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.material.BottomNavigation
 import androidx.compose.material.BottomNavigationItem
 import androidx.compose.material.FloatingActionButton
@@ -14,11 +18,9 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.snapshots.SnapshotStateList
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import uz.otamurod.kmp.compose.theme.AppTheme
 
-@SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
 fun MainView(actionBarFun: topBarFun = { emptyComposable() }) {
     val showAddDialog = remember { mutableStateOf(false) }
@@ -46,22 +48,29 @@ fun MainView(actionBarFun: topBarFun = { emptyComposable() }) {
                 }
             },
             bottomBar = {
-                BottomNavigation {
-                    bottomNavigationItems.forEachIndexed { i, bottomNavigationItem ->
-                        BottomNavigationItem(
-                            selected = selectedIndex.value == i,
-                            onClick = { selectedIndex.value = i },
-                            icon = {
-                                Icon(
-                                    imageVector = bottomNavigationItem.icon,
-                                    contentDescription = bottomNavigationItem.iconContentDescription
-                                )
-                            }
-                        )
+                // Use WindowInsets.navigationBars to avoid overlapping
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .windowInsetsPadding(WindowInsets.navigationBars)
+                ) {
+                    BottomNavigation {
+                        bottomNavigationItems.forEachIndexed { i, bottomNavigationItem ->
+                            BottomNavigationItem(
+                                selected = selectedIndex.value == i,
+                                onClick = { selectedIndex.value = i },
+                                icon = {
+                                    Icon(
+                                        imageVector = bottomNavigationItem.icon,
+                                        contentDescription = bottomNavigationItem.iconContentDescription
+                                    )
+                                }
+                            )
+                        }
                     }
                 }
             }
-        ) {
+        ) { innerPadding-> // Use innerPadding for content
             if (showAddDialog.value) {
                 AddTimeZoneDialog(
                     onAdd = { newTimezones ->
@@ -79,15 +88,9 @@ fun MainView(actionBarFun: topBarFun = { emptyComposable() }) {
             }
 
             when (selectedIndex.value) {
-                0 -> TimeZoneScreen(currentTimezoneStrings)
+                0 -> TimeZoneScreen(currentTimezoneStrings, innerPadding)
                 1 -> FindMeetingScreen(currentTimezoneStrings)
             }
         }
     }
-}
-
-@Preview(name = "MainView")
-@Composable
-private fun PreviewMainView() {
-    MainView()
 }

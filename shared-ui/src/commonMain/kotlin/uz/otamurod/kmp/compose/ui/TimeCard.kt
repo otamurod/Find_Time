@@ -18,7 +18,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
@@ -102,10 +101,4 @@ fun TimeCard(
             }
         }
     }
-}
-
-@Preview(name = "TimeCard")
-@Composable
-private fun PreviewTimeCard() {
-    TimeCard(timezone = "Tashkent/Asia", hours = 3.0, time = "10:30 am", date = "Wednesday June 19" )
 }

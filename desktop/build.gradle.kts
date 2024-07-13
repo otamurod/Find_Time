@@ -28,14 +28,14 @@ kotlin {
                 implementation(libs.coroutines.core)
 
                 implementation(projects.shared)
-                // implementation(project(":shared-ui"))
+                implementation(projects.sharedUi)
             }
         }
     }
 }
 
 compose.desktop {
-    application() {
+    application {
         mainClass = "MainKt"
         nativeDistributions {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)

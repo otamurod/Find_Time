@@ -1,9 +1,9 @@
 package uz.otamurod.kmp.compose.ui
 
-import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
@@ -12,7 +12,6 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
-import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Icon
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Delete
@@ -26,7 +25,6 @@ import androidx.compose.runtime.snapshots.SnapshotStateList
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import kotlinx.coroutines.delay
 import uz.otamurod.kmp.findtime.TimeZoneHelper
@@ -34,10 +32,10 @@ import uz.otamurod.kmp.findtime.TimeZoneHelperImpl
 
 const val timeMillis = 1000 * 60L // 1 minute
 
-@OptIn(ExperimentalMaterialApi::class, ExperimentalAnimationApi::class)
 @Composable
 fun TimeZoneScreen(
-    currentTimezoneStrings: SnapshotStateList<String>
+    currentTimezoneStrings: SnapshotStateList<String>,
+    innerPadding: PaddingValues
 ) {
     val timezoneHelper: TimeZoneHelper = TimeZoneHelperImpl()
     val listState = rememberLazyListState()
@@ -61,8 +59,12 @@ fun TimeZoneScreen(
         )
 
         Spacer(modifier = Modifier.size(16.dp))
-        // TODO: Add Timezone items
-        LazyColumn(state = listState) {
+        // Add Timezone items
+        LazyColumn(
+            state = listState,
+            modifier = Modifier
+                .padding(innerPadding)
+        ) {
             items(
                 items = currentTimezoneStrings,
                 key = { timezone -> timezone }) { timezoneString ->
@@ -101,10 +103,4 @@ fun TimeZoneScreen(
             }
         }
     }
-}
-
-@Preview(name = "TimeZoneScreen")
-@Composable
-private fun PreviewTimeZoneScreen() {
-    TimeZoneScreen(currentTimezoneStrings = SnapshotStateList<String>())
 }
