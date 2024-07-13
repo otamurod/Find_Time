@@ -1,4 +1,4 @@
-package uz.otamurod.kmp.findtime.android.ui
+package uz.otamurod.kmp.compose.ui
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.padding
@@ -16,7 +16,7 @@ import androidx.compose.runtime.snapshots.SnapshotStateList
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import uz.otamurod.kmp.findtime.android.theme.AppTheme
+import uz.otamurod.kmp.compose.theme.AppTheme
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable

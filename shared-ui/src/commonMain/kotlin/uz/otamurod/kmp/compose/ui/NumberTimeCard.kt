@@ -1,4 +1,4 @@
-package uz.otamurod.kmp.findtime.android.ui
+package uz.otamurod.kmp.compose.ui
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Row

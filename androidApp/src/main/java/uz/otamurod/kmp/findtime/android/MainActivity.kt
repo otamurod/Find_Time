@@ -15,8 +15,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import io.github.aakira.napier.DebugAntilog
 import io.github.aakira.napier.Napier
-import uz.otamurod.kmp.findtime.android.theme.AppTheme
-import uz.otamurod.kmp.findtime.android.ui.MainView
+import uz.otamurod.kmp.compose.theme.AppTheme
+import uz.otamurod.kmp.compose.ui.MainView
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,13 +24,13 @@ class MainActivity : ComponentActivity() {
         Napier.base(DebugAntilog())
 
         setContent {
-            AppTheme {
+            uz.otamurod.kmp.compose.theme.AppTheme {
                 Surface(
                     modifier = Modifier
                         .fillMaxSize()
                         .background(color = MaterialTheme.colors.background)
                 ) {
-                    MainView {
+                    uz.otamurod.kmp.compose.ui.MainView {
                         TopAppBar(title = {
                             when (it) {
                                 0 -> Text(text = stringResource(id = R.string.world_clocks))
@@ -47,13 +47,13 @@ class MainActivity : ComponentActivity() {
 @Preview
 @Composable
 fun DefaultPreview() {
-    AppTheme {
+    uz.otamurod.kmp.compose.theme.AppTheme {
         Surface(
             modifier = Modifier
                 .fillMaxSize()
                 .background(color = MaterialTheme.colors.background)
         ) {
-            MainView {
+            uz.otamurod.kmp.compose.ui.MainView {
                 TopAppBar(title = {
                     when (it) {
                         0 -> Text(text = stringResource(id = R.string.world_clocks))

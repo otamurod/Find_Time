@@ -1,4 +1,4 @@
-package uz.otamurod.kmp.findtime.android.ui
+package uz.otamurod.kmp.compose.ui
 
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.background

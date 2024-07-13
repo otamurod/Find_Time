@@ -1,4 +1,4 @@
-package uz.otamurod.kmp.findtime.android.ui
+package uz.otamurod.kmp.compose.ui
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
@@ -20,9 +20,9 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import uz.otamurod.kmp.findtime.android.theme.primaryColor
-import uz.otamurod.kmp.findtime.android.theme.primaryDarkColor
-import uz.otamurod.kmp.findtime.android.theme.typography
+import uz.otamurod.kmp.compose.theme.primaryColor
+import uz.otamurod.kmp.compose.theme.primaryDarkColor
+import uz.otamurod.kmp.compose.theme.typography
 
 @Composable
 fun LocalTimeCard(city: String, time: String, date: String) {

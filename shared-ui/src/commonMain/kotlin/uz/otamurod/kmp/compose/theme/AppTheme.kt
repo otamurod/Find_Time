@@ -1,4 +1,4 @@
-package uz.otamurod.kmp.findtime.android.theme
+package uz.otamurod.kmp.compose.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.shape.RoundedCornerShape
