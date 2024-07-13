@@ -9,6 +9,8 @@ material = "1.12.0"
 napier = "2.1.0"
 kotlinxDateTime = "0.5.0"
 desktop-compose = "1.6.2"
+desktop-compose-plugin ="1.6.2"
+coroutines = "1.8.1"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -30,6 +32,7 @@ napier = { module = "io.github.aakira:napier", version.ref = "napier" }
 jetbrains-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinxDateTime" }
 jetbrains-uiDesktop = { module = "org.jetbrains.compose.ui:ui-desktop", version.ref = "desktop-compose" }
 jetbrains-uiUtil = { module = "org.jetbrains.compose.ui:ui-util", version.ref = "desktop-compose" }
+coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
@@ -37,3 +40,4 @@ androidLibrary = { id = "com.android.library", version.ref = "agp" }
 kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 kotlinCocoapods = { id = "org.jetbrains.kotlin.native.cocoapods", version.ref = "kotlin" }
+composePlugin = { id = "org.jetbrains.compose", version.ref = "desktop-compose-plugin" }
